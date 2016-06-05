@@ -1,0 +1,318 @@
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  
+  
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+  <script type="text/javascript" src="./javascript.js"></script>
+<h2>Edit <%= resource_name.to_s.humanize %></h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= devise_error_messages! %>
+
+<div>
+    Add Your <%= f.label :avatar %>:
+    <%= f.file_field :avatar %>
+</div>
+
+  <div class="field">
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name, autofocus: true %>
+  </div> 
+  
+  <div class="field">
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name, autofocus: true %>
+  </div> 
+  
+   <div class="field">
+    <%= f.label :date_of_birth %><br />
+    <%= f.text_field :date_of_birth, autofocus: true %>
+  </div> 
+  
+  <div class="field">
+    <%= f.label :address %><br />
+    <%= f.text_area :address, size: "25x5", autofocus: true %>
+  </div> 
+  
+  <div class="field">
+    <%= f.label :state %><br />
+    <%= f.select :state, options_for_select(us_states) %>
+  </div> 
+  
+  <div class="field">
+    <%= f.label :city %><br />
+    <%= f.select :city, options_for_select(us_cities) %>
+  </div> 
+  
+  <div class="field">
+    <%= f.label :married %><br />
+    <%= f.select :married, [["Select status", "Select status"],["Yes", "yes"], ["No", "no"]] %>
+  </div> 
+  
+  <div class="field" id="wife_name_one" style="display:none;">
+    <%= f.label :wife_name %><br />
+    <%= f.text_field :wife_name, autofocus: true %>
+  </div> 
+  
+  <div class="field" id="wife_age_one" style="display:none;">
+    <%= f.label :wife_age %><br />
+    <%= f.text_field :wife_age, autofocus: true %>
+  </div> 
+  
+  
+	<div id="child_name_one" style="display:none;">
+		<%= f.label :child_name %><br/>
+		<%= f.text_field :child_name, autofocus: true %> <input type="button" class="btn btn-primary show" value="Got more children?">
+                        <input type="button" class="btn btn-primary hide" value="Hide children" style="display:none;">
+	</div>
+	
+<div class="childone" style="display:none;">
+    <%= f.label :childone %><br />
+    <%= f.text_field :childone, autofocus: true %><input type="button" class="btn btn-primary show1" value="Got more children?">
+                        <input type="button" class="btn btn-primary hide1" value="Hide children" style="display:none;">
+  </div>
+  
+  <div class="childtwo" style="display:none;">
+    <%= f.label :childtwo %><br />
+    <%= f.text_field :childtwo, autofocus: true %><input type="button" class="btn btn-primary show2" value="Got more children?">
+                        <input type="button" class="btn btn-primary hide2" value="Hide children" style="display:none;">
+  </div>
+  <div class="childthree" style="display:none;">
+    <%= f.label :childthree %><br />
+    <%= f.text_field :childthree, autofocus: true %><input type="button" class="btn btn-primary show3" value="Got more children?">
+                        <input type="button" class="btn btn-primary hide3" value="Hide children" style="display:none;">
+  </div>
+  
+   <div class="childfour" style="display:none;">
+    <%= f.label :childfour %><br />
+    <%= f.text_field :childfour, autofocus: true %><input type="button" class="btn btn-primary show4" value="Got more children?">
+                        <input type="button" class="btn btn-primary hide4" value="Hide children" style="display:none;">
+  </div>
+  
+    <div class="childfive" style="display:none;">
+    <%= f.label :childfive %><br />
+    <%= f.text_field :childfive, autofocus: true %>
+    </div>
+    
+     <div class="field">
+    <%= f.label :phone_number %><br />
+    <%= f.text_field :phone_number, autofocus: true %><input type="button" class="btn btn-primary show5" value="Got more number?">
+                        <input type="button" class="btn btn-primary hide5" value="Hide number" style="display:none;">
+    </div>
+  
+     <div class="phonenumber1" style="display:none;">
+    <%= f.label :phone_number1 %><br />
+    <%= f.text_field :phone_number1, autofocus: true %><input type="button" class="btn btn-primary show6" value="Got more number?">
+                        <input type="button" class="btn btn-primary hide6" value="Hide number" style="display:none;">
+    </div>
+    
+    <div class="phonenumber2" style="display:none;">
+    <%= f.label :phone_number2 %><br />
+    <%= f.text_field :phone_number2, autofocus: true %><input type="button" class="btn btn-primary show7" value="Got more number?">
+                        <input type="button" class="btn btn-primary hide7" value="Hide number" style="display:none;">
+    </div>
+    
+    <div class="phonenumber3" style="display:none;">
+    <%= f.label :phone_number3 %><br />
+    <%= f.text_field :phone_number3, autofocus: true %><input type="button" class="btn btn-primary show8" value="Got more number?">
+                        <input type="button" class="btn btn-primary hide8" value="Hide number" style="display:none;">
+    </div>
+    
+     <div class="phonenumber4" style="display:none;">
+    <%= f.label :phone_number4 %><br />
+    <%= f.text_field :phone_number4, autofocus: true %>
+    </div>
+    
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true %>
+  </div>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+    <%= f.password_field :current_password, autocomplete: "off" %>
+  </div>
+
+
+  <div class="actions">
+    <%= f.submit "Update" %>
+  </div>
+<% end %>
+
+<h3>Cancel my account</h3>
+
+<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+
+
+<%= link_to "Back", :back %>
+
+<script>
+   $("#user_date_of_birth").datepicker({
+      dateFormat: "yy-mm-dd"
+    });
+  </script>
+
+<script>
+  $('#user_married').change(function(){
+   selection = $(this).val();    
+   switch(selection)
+   { 
+       case 'no':
+           $('#wife_name_one').hide();
+           $('#wife_age_one').hide();
+           $('#child_name_one').hide();
+          
+           break;
+       default:
+           $('#wife_name_one').show();
+           $('#wife_age_one').show();
+           $('#child_name_one').show();
+         
+           break;
+   }
+});
+</script>
+
+<script type="text/javascript">
+     $(".show").click(function () {
+    $('.hide').show();
+    $(this).hide();
+    $('.childone').eq(0).show();
+});
+
+$('.hide').click(function () {
+    $('.show').show();
+    $(this).hide();
+    $('.childone').eq(0).hide();
+});
+</script>
+
+<script type="text/javascript">
+     $(".show1").click(function () {
+    $('.hide1').show();
+    $(this).hide();
+    $('.childtwo').eq(0).show();
+});
+
+$('.hide1').click(function () {
+    $('.show1').show();
+    $(this).hide();
+    $('.childtwo').eq(0).hide();
+});
+</script>
+
+
+<script type="text/javascript">
+     $(".show2").click(function () {
+    $('.hide2').show();
+    $(this).hide();
+    $('.childthree').eq(0).show();
+});
+
+$('.hide2').click(function () {
+    $('.show2').show();
+    $(this).hide();
+    $('.childthree').eq(0).hide();
+});
+</script>
+
+
+<script type="text/javascript">
+     $(".show3").click(function () {
+    $('.hide3').show();
+    $(this).hide();
+    $('.childfour').eq(0).show();
+});
+
+$('.hide3').click(function () {
+    $('.show3').show();
+    $(this).hide();
+    $('.childfour').eq(0).hide();
+});
+</script>
+
+<script type="text/javascript">
+     $(".show4").click(function () {
+    $('.hide4').show();
+    $(this).hide();
+    $('.childfive').eq(0).show();
+});
+
+$('.hide4').click(function () {
+    $('.show4').show();
+    $(this).hide();
+    $('.childfive').eq(0).hide();
+});
+</script>
+
+<script type="text/javascript">
+     $(".show5").click(function () {
+    $('.hide5').show();
+    $(this).hide();
+    $('.phonenumber1').eq(0).show();
+});
+
+$('.hide5').click(function () {
+    $('.show5').show();
+    $(this).hide();
+    $('.phonenumber1').eq(0).hide();
+});
+</script>
+
+<script type="text/javascript">
+     $(".show6").click(function () {
+    $('.hide6').show();
+    $(this).hide();
+    $('.phonenumber2').eq(0).show();
+});
+
+$('.hide6').click(function () {
+    $('.show6').show();
+    $(this).hide();
+    $('.phonenumber2').eq(0).hide();
+});
+</script>
+
+<script type="text/javascript">
+     $(".show7").click(function () {
+    $('.hide7').show();
+    $(this).hide();
+    $('.phonenumber3').eq(0).show();
+});
+
+$('.hide7').click(function () {
+    $('.show7').show();
+    $(this).hide();
+    $('.phonenumber3').eq(0).hide();
+});
+</script>
+
+<script type="text/javascript">
+     $(".show8").click(function () {
+    $('.hide8').show();
+    $(this).hide();
+    $('.phonenumber4').eq(0).show();
+});
+
+$('.hide8').click(function () {
+    $('.show8').show();
+    $(this).hide();
+    $('.phonenumber4').eq(0).hide();
+});
+</script>
+
