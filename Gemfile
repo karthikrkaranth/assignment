@@ -18,6 +18,7 @@ gem 'pg'
 
 gem 'bootstrap-datepicker-rails'
  gem "paperclip", "~> 4.1"
+ gem 'rails_12factor', group: :production
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

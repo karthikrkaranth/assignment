@@ -2,6 +2,7 @@ module ApplicationHelper
     
     def us_states
     [
+      ['Select state', 'AL'],
       ['Alabama', 'AL'],
       ['Alaska', 'AK'],
       ['Arizona', 'AZ'],
@@ -59,6 +60,7 @@ end
 
  def us_cities
     [
+      ['Select city', 'AL'],
       ['New York', 'AL'],
       ['Los Angeles', 'AK'],
       ['Chicago', 'AZ'],

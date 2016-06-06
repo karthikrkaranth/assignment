@@ -14,8 +14,13 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-
-
+//= require jquery
+//= require bootstrap.min
+//= require classie
+//= require cbpAnimatedHeader
+//= require jqBootstrapValidation
+//= require contact_me
+//= require freelancer
 /*
 	*	Original script by: Shafiul Azam
 	*	ishafiul@gmail.com
@@ -39,3 +44,4 @@
 	*	Aurthor's Website: http://shafiul.progmaatic.com
 	*
 */
+
