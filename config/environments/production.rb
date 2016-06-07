@@ -24,7 +24,7 @@ Rails.application.configure do
   # Apache or NGINX already handles this.
   config.serve_static_files = ENV['RAILS_SERVE_STATIC_FILES'].present?
 
-Rails.application.routes.default_url_options[:host] = 'myappsname.herokuapp.com'
+Rails.application.routes.default_url_options[:host] = 'https://peaceful-ocean-80983.herokuapp.com/'
 config.action_mailer.delivery_method = :smtp
 config.action_mailer.perform_deliveries = true
 config.action_mailer.raise_delivery_errors = false
