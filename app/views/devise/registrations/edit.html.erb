@@ -355,6 +355,11 @@ select{
 				 <div class="phonenumber4" style="display:none;">
     <%= f.text_field :phone_number4, placeholder: "Enter phone number" %>
     </div>
+    
+     <div >
+    <%= f.text_field :email, placeholder: "Enter your email" %>
+    </div>
+    
 			<% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
@@ -369,7 +374,8 @@ select{
 			</div>
 		
 			<div>
-				<%= f.submit "Update" %> <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete ,style:"width:30%;"%>
+				<%= f.submit "Update" %> 
+		
 			 			</div>
 	<% end %>
 			</section><!-- content -->
