@@ -24,6 +24,12 @@ Rails.application.configure do
   # Apache or NGINX already handles this.
   config.serve_static_files = ENV['RAILS_SERVE_STATIC_FILES'].present?
 
+Rails.application.routes.default_url_options[:host] = 'myappsname.herokuapp.com'
+config.action_mailer.delivery_method = :smtp
+config.action_mailer.perform_deliveries = true
+config.action_mailer.raise_delivery_errors = false
+config.action_mailer.default :charset => "utf-8"
+
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
   # config.assets.css_compressor = :sass
@@ -73,7 +79,7 @@ Rails.application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
- config.action_mailer.default_url_options = { host: 'https://peaceful-ocean-80983.herokuapp.com' }
+
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 end
