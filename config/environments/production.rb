@@ -30,6 +30,17 @@ config.action_mailer.perform_deliveries = true
 config.action_mailer.raise_delivery_errors = false
 config.action_mailer.default :charset => "utf-8"
 
+config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    user_name:      'karanthrkarthik@gmail.com',
+    password:       'tenniskrishna3',
+    domain:         'gmail.com',
+    address:       'smtp.gmail.com',
+    port:          '587',
+    authentication: :plain,
+    enable_starttls_auto: true
+  }
+
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
   # config.assets.css_compressor = :sass
