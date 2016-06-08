@@ -4,6 +4,10 @@
   
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
   <script type="text/javascript" src="./javascript.js"></script>
+  
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 
 <!DOCTYPE html>
@@ -296,13 +300,13 @@ select{
 			  <%= f.text_area :address, :class => 'class=form-control', size: "37x5", autofocus: true , placeholder: "Enter your address"  %>
 			</div><br/>
 			<div>
-			  <%= f.select :state, options_for_select(us_states) %>
+			  <%= f.select :state, options_for_select(us_states) ,{}, { :class => 'form-control' ,:style => "width:40%;margin-left:30%;" ,selected: f.object.state } %>
 			</div><br/>
 			<div>
-			  <%= f.select :city, options_for_select(us_cities) %>
+			  <%= f.select :city, options_for_select(us_cities)  ,{}, { :class => 'form-control' ,:style => "width:40%;margin-left:30%;" ,selected: f.object.city } %>
 			</div>
-			  <div ><br/>
-			 <%= f.select :married, [["marital status", "marital status"],["Yes", "yes"], ["No", "no"]] %>
+			  <div class=""><br/>
+			 <%= f.select :married, [["Marital status", "marital status"],["Yes", "yes"], ["No", "no"]] ,{}, { :class => 'form-control' ,:style => "width:40%;margin-left:30%;" ,selected: f.object.married }   %>
 			</div><br/>
 			<div class="field" id="wife_name_one" style="display:none;">
 			<%= f.text_field :wife_name, autofocus: true , placeholder: "Enter wife name" %> <%= f.text_field :wife_age, autofocus: true , placeholder: "Enter wife age "%>
@@ -337,23 +341,23 @@ select{
     <%= f.text_field :childfive, placeholder: "Enter child name" %><%= f.text_field :childagesix, placeholder: "Enter child age" %>
     </div>
 			   <div class="field">
-    <%= f.text_field :phone_number, placeholder: "Enter phone number" %><input type="button"  style = "margin-left:2%;" class="btn btn-primary show5" value="Got more number?">
+    <%= f.text_field :phone_number, placeholder: "Enter phone number",:style => "margin-left:20%;" %><input type="button"  style = "margin-left:2%;" class="btn btn-primary show5" value="Got more number?">
                         <input type="button" class="btn btn-primary hide5" value="Hide number" style="display:none;">
     </div>
 	<div class="phonenumber1" style="display:none;">
-  <%= f.text_field :phone_number1, placeholder: "Enter phone number" %><input type="button" class="btn btn-primary show6" value="Got more number?">
+  <%= f.text_field :phone_number1, placeholder: "Enter phone number" ,:style => "margin-left:20%;" %><input type="button" class="btn btn-primary show6" value="Got more number?">
     <input type="button" class="btn btn-primary hide6" value="Hide number" style="display:none;">
     </div>
 		 <div class="phonenumber2" style="display:none;">
-      <%= f.text_field :phone_number2, placeholder: "Enter phone number" %><input type="button" class="btn btn-primary show7" value="Got more number?">
+      <%= f.text_field :phone_number2, placeholder: "Enter phone number",:style => "margin-left:20%;" %><input type="button" class="btn btn-primary show7" value="Got more number?">
                         <input type="button" class="btn btn-primary hide7" value="Hide number" style="display:none;">
     </div>
 			<div class="phonenumber3" style="display:none;">
            <%= f.text_field :phone_number3, autofocus: true %><input type="button" class="btn btn-primary show8" value="Got more number?">
-         <input type="button" class="btn btn-primary hide8" value="Hide number" style="display:none;">
+         <input type="button" class="btn btn-primary hide8",:style => "margin-left:20%;" value="Hide number" style="display:none;">
     </div>
 				 <div class="phonenumber4" style="display:none;">
-    <%= f.text_field :phone_number4, placeholder: "Enter phone number" %>
+    <%= f.text_field :phone_number4, placeholder: "Enter phone number",:style => "margin-left:20%;" %>
     </div>
     
      <div >
