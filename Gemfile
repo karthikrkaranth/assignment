@@ -14,11 +14,9 @@ gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 gem 'devise'
-gem 'pg'
 
 gem 'bootstrap-datepicker-rails'
  gem "paperclip", "~> 4.1"
- gem 'rails_12factor', group: :production
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -51,3 +49,11 @@ group :development do
   gem 'spring'
 end
 
+group :development, :production do
+  # Use postgresql as the database for Active Record
+  gem 'pg', '~> 0.15'
+end
+
+group :production do
+  gem 'rails_12factor', '0.0.2'
+end
